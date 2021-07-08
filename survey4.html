@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>소프트웨어 기술</title>
+</head>
+<body>
+	<header>
+		<h2>설문지</h2>
+		소프트웨워 기술에 대한 의견을 듣습니다. 많은 참여 부탁드립니다.
+	</header>
+	<hr>
+	<section>
+		<form>
+			학년
+				<input type="radio" name = "grad" value="1학년"> 1학년
+				<input type="radio" name = "grad" value="2학년"> 2학년
+				<input type="radio" name = "grad" value="3학년"> 3학년
+				<input type="radio" name = "grad" value="4학년"> 4학년
+				<br>
+			성별
+				<input type="radio" name = "gender" value="남자"> 남자
+				<input type="radio" name = "gender" value="여자"> 여자
+				<br>
+			관심분야
+				<input type="text" list="what">
+					<datalist id="what">
+						<option value="모바일 소프트웨어">
+						<option value="보안 소프트웨어">
+						<option value="정보 보안">
+					</datalist><br>
+			진로
+				<input type="checkbox" value="진로"> 진로
+				<input type="checkbox" value="개발"> 개발
+				<input type="checkbox" value="영업"> 영업
+				<input type="checkbox" value="창업"> 창업
+				<br>
+			남기고 싶은 말
+			<br>
+			<textarea cols="40" rows="7" placeholder = "글을 남겨주세요"></textarea>
+		</form>
+	</section>
+	<footer>
+		Copyright 2017 by Kitae
+	</footer>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>갬블링 게임</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <style>
+        #divStyle {
+            border: 1px solid gray;
+            background-color: ivory;
+            font-family: Consolas, 'Courier New', monospace;
+            font-size: 70px;
+            color: blue;
+            width: 210px;
+            font-style: italic;
+        }
+        #resultId {
+            color: violet;
+            font-size: 25px;
+            font-style: italic;
+            font-family: Consolas, 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+<h3>갬블링 게임</h3>  
+<p>각 숫자를 클릭하면 0에서 2사이의 난수로 바뀝니다. 모두 같은 수가 나오면 승리합니다.</p>
+<hr>
+<div id="divStyle">
+    <span id="numRand" onclick="rand()">0</span>
+    <span id="numRand1" onclick="rand1()">0</span>
+    <span id="numRand2" onclick="rand2()">0</span>
+</div>
+<div id="resultId" onclick="restart()"></div>
+<script>
+    var sw=0;
+    var sw1=0;
+    var sw2=0;
+    var numArray=new Array();
+    function rand() {
+        if(sw!=1) {
+            var span = document.getElementById("numRand");
+            var num = Math.random() * 3;
+            var num2 = Math.floor(num);
+            span.innerHTML = num2;
+            numArray[0]=num2;
+            sw = 1;
+        }
+    }
+    function rand1() {
+        if (sw1 != 1) {
+            var span = document.getElementById("numRand1");
+            var num = Math.random() * 3;
+            var num2 = Math.floor(num);
+            span.innerHTML = num2;
+            numArray[1] = num2;
+            sw1 = 1;
+        }
+    }
+    function rand2() {
+        if (sw2 != 1) {
+            var span = document.getElementById("numRand2");
+            var num = Math.random() * 3;
+            var num2 = Math.floor(num);
+            span.innerHTML = num2;
+            numArray[2] = num2;
+            sw2 = 1;
+            var resultNum = numArray[0];
+            var resultSw = 1;
+            for (var i = 1; i < 3; ++i) {
+                if (numArray[i] != resultNum) {
+                    resultSw = 0;
+                    break;
+                }
+            }
+            var result = document.getElementById("resultId");
+            if (resultSw == 0) {
+                result.innerHTML = "fail(click here to do again)";
+            }
+            else {
+                result.innerHTML = "Success(click here to do again)";
+            }
+        }
+    }
+    function restart() {
+        location.reload();
+    }
+</script>
+</body>
+</html>
